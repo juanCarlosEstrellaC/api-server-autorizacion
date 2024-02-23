@@ -18,10 +18,10 @@ public class UsuarioRepositoryImpl implements IUsuarioRepository {
 
 	@Override
 	public Usuario consultarPorNombre(String nombre) {
-		TypedQuery<Usuario> m = this.entityManager.createQuery("SELECT u FROM Usuario u WHERE u.nombre= :nombre", Usuario.class);
+		TypedQuery<Usuario> m = this.entityManager.createQuery("SELECT u FROM Usuario u WHERE u.nombre= :nombre",
+				Usuario.class);
 		m.setParameter("nombre", nombre);
 		return m.getSingleResult();
 	}
-	
-	
+
 }
