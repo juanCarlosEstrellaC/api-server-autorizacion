@@ -1,4 +1,4 @@
-package com.example.demo.segurity;
+package com.example.demo.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -22,8 +22,8 @@ public class WebSecurity {
 	@Autowired
 	private AuthEntryPointJwt authEntryPointJwt;
 
-	// /API/v1.0/seguridad/autorizaciones/jwt/**
-	// todas las capacidades esán protegidas pero el obtener token debe ser publica.
+	// La capacidad de esta ruta: /API/v1.0/seguridad/autorizaciones/jwt/** será configurada para que sea pública.
+	// todas las capacidades esán protegidas pero la de obtener token no, esta debe ser publica.
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(authEntryPointJwt).and()

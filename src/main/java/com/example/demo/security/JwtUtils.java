@@ -1,4 +1,4 @@
-package com.example.demo.segurity;
+package com.example.demo.security;
 
 import java.util.Date;
 
@@ -10,17 +10,19 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 @Component
 public class JwtUtils {
-	
+
 	@Value("${app.jwtSemilla}")
 	private String jwtSemilla;
-	
+
 	@Value("${app.jwtExpirationMs}")
 	private int jwtExpirationMs;
 
 	public String buildTokenJwt(String nombre) {
 		return Jwts.builder().setSubject(nombre).setSubject("Hola mundo").setIssuedAt(new Date())
-				.setExpiration(new Date(System.currentTimeMillis() + this.jwtExpirationMs))
-				.signWith(SignatureAlgorithm.HS512, "gfdiofjoaisdjfioadjfioasdjfoiajdfioasjf1221221212aosidjf8af98adf8asdhusdhusdhauihdfudshfuiadhfaishfdaisuhfuiashfiuhdsffasdf").compact();
-	}
+				.setExpiration(new Date(System.currentTimeMillis() + 100000000))  //this.jwtExpirationMs
+				.signWith(SignatureAlgorithm.HS512,
+						"semillafckmsdmfmisofsfosofifisdefikiregi9483r84ruff8ufru87rg8ww322rrrrfsemillawdefrfgdtvgbomgobmdrb203290324825835824202405385358035edscfsdfsdfdsuio")
+				.compact();
 
+	}
 }

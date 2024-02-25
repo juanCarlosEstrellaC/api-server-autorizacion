@@ -12,7 +12,13 @@ public class UsuarioTo implements Serializable{
 	private String nombre;
 	private String password;
 	
+	// ToString:
+	@Override
+	public String toString() {
+		return "UsuarioTo [nombre=" + nombre + ", password=" + password + "]";
+	}
 	
+	// GET Y SET
 	public String getNombre() {
 		return nombre;
 	}
@@ -26,10 +32,7 @@ public class UsuarioTo implements Serializable{
 		this.password = password;
 	}
 	
-	@Override
-	public String toString() {
-		return "UsuarioTo [nombre=" + nombre + ", password=" + password + "]";
-	}
+	
 	
 	
 	

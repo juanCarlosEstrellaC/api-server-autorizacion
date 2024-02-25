@@ -1,4 +1,4 @@
-package com.example.demo.segurity;
+package com.example.demo.security;
 
 import java.io.IOException;
 import java.util.HashMap;
