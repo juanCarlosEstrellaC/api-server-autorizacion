@@ -19,7 +19,7 @@ public class JwtUtils {
 
 	public String buildTokenJwt(String nombre) {
 		return Jwts.builder().setSubject(nombre).setSubject("Hola mundo").setIssuedAt(new Date())
-				.setExpiration(new Date(System.currentTimeMillis() + 100000000))  //this.jwtExpirationMs
+				.setExpiration(new Date(System.currentTimeMillis() + this.jwtExpirationMs))  //this.jwtExpirationMs
 				.signWith(SignatureAlgorithm.HS512,
 						"semillafckmsdmfmisofsfosofifisdefikiregi9483r84ruff8ufru87rg8ww322rrrrfsemillawdefrfgdtvgbomgobmdrb203290324825835824202405385358035edscfsdfsdfdsuio")
 				.compact();
